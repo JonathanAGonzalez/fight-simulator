@@ -13,6 +13,11 @@ ul {
   padding: 0;
 }
 
+.winner {
+  color: green;
+  font-size: 40px;
+}
+
 .container__cards {
   display: flex;
   justify-content: space-between;

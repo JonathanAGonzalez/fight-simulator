@@ -79,6 +79,14 @@ function App() {
   };
 
   useEffect(() => {
+    if (players[0].im) {
+      const audio = document.getElementById('winner') as HTMLAudioElement;
+      audio?.play();
+      audio.volume = 0.2;
+    }
+  }, []);
+
+  useEffect(() => {
     if (isStarted && !isGameOver) {
       checkGameOver();
       handleSwitchPlayer();
@@ -115,7 +123,8 @@ function App() {
   return (
     <>
       <h2>Time: {timeLeft}</h2>
-      {winner}
+      {winner && <h2 className='winner'>Winner {winner}</h2>}
+
       <audio id='punch' src='/sound/punch.mp3'></audio>
       <audio id='punch2' src='/sound/punch.mp3'></audio>
       <audio id='game-over' src='/sound/game-over.mp3'></audio>

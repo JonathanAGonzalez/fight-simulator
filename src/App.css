@@ -17,14 +17,15 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid blue;
+
   width: 900px;
 }
 
 .container__card {
-  border: 2px solid red;
+  border: 1px solid #ccc;
   width: 300px;
   height: 500px;
+  border-radius: 8px;
 }
 .animation__attack {
   animation: attack 0.1s linear 4 alternate;

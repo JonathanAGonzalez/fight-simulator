@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 
-const Card = ({ count, srcImage }: { count: number; srcImage: string }) => {
+const Card = ({
+  count,
+  srcImage,
+  player,
+}: {
+  player: string;
+  count: number;
+  srcImage: string;
+}) => {
   const reference: any = useRef(null);
   const audio = document.getElementById('punch') as HTMLAudioElement;
   const audio2 = document.getElementById('punch2') as HTMLAudioElement;
@@ -28,6 +36,7 @@ const Card = ({ count, srcImage }: { count: number; srcImage: string }) => {
     <div className='container__card' ref={reference}>
       <img src={srcImage} alt='' />
       <div>
+        <h3>{player}</h3>
         <h3>Habilities</h3>
         <progress id='file' max='100' value={count}></progress>
         <ul>
@@ -130,9 +139,17 @@ function App() {
       <audio id='game-over' src='/sound/game-over.mp3'></audio>
       <audio id='winner' src='/sound/winner.mp3'></audio>
       <div className='container__cards'>
-        <Card count={players[0].life} srcImage={players[0].srcImage} />
+        <Card
+          player={players[0].name}
+          count={players[0].life}
+          srcImage={players[0].srcImage}
+        />
         {!isStarted && <button onClick={handleStart}>Fight!</button>}
-        <Card count={players[1].life} srcImage={players[1].srcImage} />
+        <Card
+          player={players[1].name}
+          count={players[1].life}
+          srcImage={players[1].srcImage}
+        />
       </div>
     </>
   );

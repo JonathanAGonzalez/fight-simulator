@@ -37,13 +37,13 @@ const Card = ({
       <img src={srcImage} alt='' />
       <div>
         <h3>{player}</h3>
-        <h3>Habilities</h3>
+        <h3>Abilities</h3>
         <progress id='file' max='100' value={count}></progress>
         <ul>
-          <li>Ataque - 5</li>
-          <li>Defensa - 5</li>
-          <li>Vitalidad - 5</li>
-          <li>Agilidad - 5</li>
+          <li>Attack - 5</li>
+          <li>Defense - 5</li>
+          <li>Vitality - 5</li>
+          <li>Agility - 5</li>
         </ul>
       </div>
     </div>

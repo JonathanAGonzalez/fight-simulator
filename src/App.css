@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+body {
+  background: url('/images/bg.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
 ul li {
   list-style: none;
 }
